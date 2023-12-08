@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试结果分析</title>
+    <link rel="stylesheet" href="../static/css/pagination.css">
+    <link rel="stylesheet" href="../static/css/home.css">
+    <link rel="stylesheet" href="../static/css/user-map.css">
+    <link rel="stylesheet" href="../static/css/nuser-vps.css"/>
+    <link rel="stylesheet" href="../static/css/mystyle.css">
+    <script  src="../static/js/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspdf"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vxe-table-plugin-export-pdf/fonts/source-han-sans-normal.js"></script>
+
+</head>
+<body>
+<div class="index">
+    <!--头部-->
+    <div class="head">
+        <b>“智测”-面向智能合约的鲁棒性测试系统</b>
+    </div>
+    <!--主体-->
+    <div class="content">
+        <div class="vps-left left">
+            <ul class="tabs">
+                <a href="index.html"><li>系统总体情况</li> </a>
+                <a href="1funIdentify.html"> <li>合约函数识别</li>   </a>
+                <a href="2getRelation.html"> <li>蜕变关系获取</li>   </a>
+                <a href="3genCase.html"> <li>原始测试用例</li></a>
+                <a href="3deriveCase.html"> <li>衍生测试用例</li></a>
+<!--                <a href="4runTest.html"> <li>蜕变测试执行</li></a>-->
+                <a href="5anaResult.html"> <li class="selected">测试结果分析</li></a>
+            </ul>
+            <b></b>
+        </div>
+
+        <div class="vps-right">
+            <i class="picture_1"></i>
+            <i class="picture_2"></i>
+            <i class="picture_3"></i>
+            <i class="picture_4"></i>
+
+            <button type="submit" class="print-button"  >生成测试报告</button>
+            <button type="submit" class="print-button" id="generate-pdf">打印测试报告</button>
+            <br>
+            <div id="pdf-content">
+            <pre class="show-result">
+    # Cryptofin 智能合约蜕变测试报告
+    ## 智能合约信息
+    - **合约名称:** Cryptofin
+    - **合约分类:** 金融智能合约
+    - **合约编译版本:** Solidity 0.8.2
+    ## 蜕变关系类型
+    - **选择的蜕变关系类型:** MR1.x
+    ## 测试统计
+    - **总测试用例数量:** 100
+    - **原始测试用例数量:** 50
+    - **衍生测试用例数量:** 50
+    ## 测试时间统计
+    - **测试开始时间:** 2023-10-25 10:00 AM
+    - **测试结束时间:** 2023-10-25 11:30 AM
+    ## 测试执行结果
+    - **原始测试用例通过数量:** 45
+    - **衍生测试用例通过数量:** 48
+    ## 测试用例信息
+    - **Gas消耗情况:**
+    - 平均 Gas 消耗: 25000 Wei
+    - 最高 Gas 消耗: 30000 Wei
+    - 最低 Gas 消耗: 20000 Wei
+    ## 测试结果分析
+    - **SCRS (Smart Contract Robustness Score):** 92
+    - **评级:** 高鲁棒性
+    ### 结果评估
+    - 根据 SCRS 值，Cryptofin 合约被评为具有高鲁棒性。大多数蜕变关系得到了满足，通过的蜕变关系比值高于设定的阈值。
+    - 测试用例的平均 Gas 消耗在合理范围内，没有出现异常情况。
+    - 合约的鲁棒性评分表明它在基于参数变换的蜕变测试中表现出色。
+            </pre>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+</body>
+
+
+</html>
+
+<script src="../static/js/jquery-1.11.1.min.js"></script>
+<script src="../static/js/jquery.pagination.js"></script>
+
+<script src="../static/js/jquery.eventFlow.js"></script>
+<script src="../static/js/echarts.js"></script>
+<script src="../static/js/printpdf.js"></script>
+<script>
+
+    /*tabe侧边栏收缩*/
+    $('.tabs li').click(function () {
+        var i = $(this).index();
+        $(this).addClass('selected').siblings().removeClass('selected');
+        $('.right .item').eq(i).show().siblings().hide();
+    })
+    //点击展开收缩
+    $(".vps-left>b").click(function () {
+        if ($(this).hasClass('out')) {
+            $(".tabs").show();
+            $(this).removeClass("out");
+            $('.vps-right').css({width: '1517px', marginLeft: "20px"});
+            $('.pie').css('width', '266px');
+            $('tr td:nth-child(4)').css('width', '804px');
+//
+        } else {
+            $(".tabs").hide();
+            $(this).addClass("out");
+            $('.vps-right').css({width: '1767px', marginLeft: "60px"});
+            $('.pie').css('width', '326px');
+            $('tr td:nth-child(4)').css('width', '990px');
+
+        }
+    });
+
+</script>

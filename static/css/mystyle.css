@@ -1,0 +1,172 @@
+.get-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: black;
+    background-color: white;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    position: relative;
+    top: 20px; /* 距离顶部的距离 */
+    left: 20px; /* 距离左侧的距离 */
+    margin: 10px; /* 外边距用于控制元素与边框之间的距离 */
+    /* 或者使用 padding 来控制内边距 */
+    /* padding: 10px; */
+
+}
+
+.get-button:hover {background-color:slategray}
+
+.get-button:active {
+    background-color: slategray;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.print-button{
+    position: relative;
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: black;
+    background-color: white;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    position: relative;
+    /*top: 5px; !* 距离顶部的距离 *!*/
+    /*left: 5px; !* 距离左侧的距离 *!*/
+    margin: 10px; /* 外边距用于控制元素与边框之间的距离 */
+}
+.print-button:hover {background-color:slategray}
+
+.print-button:active {
+    background-color: slategray;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.get-legend{
+    position: relative;
+    top: 20px; /* 距离顶部的距离 */
+    left: 20px; /* 距离左侧的距离 */
+    margin: 10px; /* 外边距用于控制元素与边框之间的距离 */
+    /* 或者使用 padding 来控制内边距 */
+    /* padding: 10px; */
+    /*border: 1px solid black; !* 添加边框 *!*/
+    color: white;
+    font-size: 20px;
+    width: 100%;
+}
+.get-label{
+    color: white;
+    position: relative;
+    top: 20px; /* 距离顶部的距离 */
+    left: 20px; /* 距离左侧的距离 */
+    margin: 10px; /* 外边距用于控制元素与边框之间的距离 */
+    /* 或者使用 padding 来控制内边距 */
+    /* padding: 10px; */
+    /*border: 1px solid black; !* 添加边框 *!*/
+    font-size: 15px;
+}
+.get-input{
+    color: white;
+    position: relative;
+    top: 20px; /* 距离顶部的距离 */
+    left: 20px; /* 距离左侧的距离 */
+    margin: 10px; /* 外边距用于控制元素与边框之间的距离 */
+    /* 或者使用 padding 来控制内边距 */
+    /* padding: 10px; */
+    border: 1px solid black; /* 添加边框 */
+}
+.get-span{
+    color: white;
+    position: relative;
+    top: 20px; /* 距离顶部的距离 */
+    left: 20px; /* 距离左侧的距离 */
+    margin: 18px; /* 外边距用于控制元素与边框之间的距离 */
+    font-size: 15px;
+}
+
+.gen-case-label{
+    color: white;
+    position: relative;
+    /*top: 20px; !* 距离顶部的距离 *!*/
+    left: 20px; /* 距离左侧的距离 */
+    margin: 20px; /* 外边距用于控制元素与边框之间的距离 */
+    display: block;
+
+}
+
+.gen-case-radio{
+    /*display: inline-block;*/
+    font-size: 15px;
+}
+
+.get-relation{
+    margin: 20px;
+}
+
+.myhr{
+    border: 1px solid white; /* 设置边框为实线 */
+    margin: 50px 0;         /* 设置分割线的上下外边距 */
+}
+.div-head{
+    position: relative;
+    margin: 10px; /* 外边距用于控制元素与边框之间的距离 */
+    /* 或者使用 padding 来控制内边距 */
+    /* padding: 10px; */
+    /*border: 1px solid black; !* 添加边框 *!*/
+    color: white;
+    font-size: 24px;
+    width: 100%;
+}
+
+.my-commit{
+
+
+    font-size: 15px;
+}
+
+.gen-testcase{
+    left: 50px;
+    margin: 20px;
+}
+
+.radio-label{
+    font-size: 15px;
+    /*margin: 10px 20px;*/
+    position: relative;
+
+}
+
+.textarea-3{
+    left: 20px;
+    top:10px;
+}
+
+.show-result{
+    color: white; /* 设置文字颜色为白色 */
+    background-color: black; /* 设置背景色为黑色 */
+    padding: 10px; /* 设置内边距以保持与其他元素的距离 */
+    margin: 20px auto;
+    width: min-content;
+    font-size: 15px;
+    letter-spacing: 1px; /* 增加字母之间的间距 */
+    line-height: 1.5; /* 增加行之间的间距，相对于文字大小 */
+}
+
+.show-pre{
+    font-size: 15px;
+    letter-spacing: 1px; /* 增加字母之间的间距 */
+    line-height: 3; /* 增加行之间的间距，相对于文字大小 */
+    color: white;
+}

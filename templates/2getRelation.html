@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>蜕变关系获取</title>
+    <link rel="stylesheet" href="../static/css/pagination.css">
+    <link rel="stylesheet" href="../static/css/home.css">
+    <link rel="stylesheet" href="../static/css/user-map.css">
+    <link rel="stylesheet" href="../static/css/nuser-vps.css"/>
+    <link rel="stylesheet" href="../static/css/mystyle.css">
+
+</head>
+<body>
+<div class="index">
+    <!--头部-->
+    <div class="head">
+        <b><h3>“智测”-面向智能合约的鲁棒性测试系统</h3></b>
+    </div>
+    <!--主体-->
+    <div class="content">
+        <div class="vps-left left">
+            <ul class="tabs">
+                <a href="index.html"><li>系统总体情况</li> </a>
+                <a href="1funIdentify.html"> <li>合约函数识别</li>   </a>
+                <a href="2getRelation.html"> <li class="selected">蜕变关系获取</li>   </a>
+                <a href="3genCase.html"> <li>原始测试用例</li></a>
+                <a href="3deriveCase.html"> <li>衍生测试用例</li></a>
+<!--                <a href="4runTest.html"> <li>蜕变测试执行</li></a>-->
+                <a href="5anaResult.html"> <li>测试结果分析</li></a>
+            </ul>
+            <b></b>
+        </div>
+
+        <div class="vps-right">
+                <i class="picture_1"></i>
+                <i class="picture_2"></i>
+                <i class="picture_3"></i>
+                <i class="picture_4"></i>
+
+            <div class="get-relation">
+                    <form>
+                        <fieldset   class="re-field">
+<!--                            <legend class="get-legend">蜕变关系获取</legend><br>-->
+                            <div class="get-span"> <span class="highlighted">选择您想使用的蜕变关系识别方法</span><br></div>
+                            <button class="get-button" type="submit"  >基于参数变换的蜕变关系</button>
+                            <button class="get-button" type="button" >基于以太币消耗的蜕变关系识别</button>
+                        </fieldset>
+                    </form>
+            </div>
+            <br>
+            <dir class="get-relation">
+                <table id="tab">
+                    <thead>
+                    <tr>
+                        <th class="pointer">序号</th>
+                        <th class="pointer">R</th>
+                        <th class="pointer">Rf</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr class="color_2">
+                        <td class="td">MR1-1</td>
+                        <td>contains(A, a); contains(A, a_)</td>
+                        <td>result_= result</td>
+
+                    </tr>
+
+
+                    <tr class="color_2">
+                        <td class="td">MR1-2</td>
+                        <td>contains(A, a); contains(A, a_)</td>
+                        <td>result_!= result</td>
+
+                    </tr>
+
+                    <tr class="color_2">
+                        <td class="td">MR1-3</td>
+                        <td>contains(A, a); contains(B, a)</td>
+                        <td>result_!= result</td>
+
+                    </tr>
+                    <tr class="color_2">
+                        <td class="td"> MR1-4	</td>
+                        <td>contains(A, a); contains(B, a_)</td>
+                        <td>result_!= result</td>
+
+                    </tr>
+                    <tr class="color_2">
+                        <td class="td">MR1-5</td>
+                        <td>append(A, a); append(A, a_)	</td>
+                        <td>result_!= result</td>
+
+                    </tr>
+                    <tr class="color_2">
+                        <td class="td">MR1-6</td>
+                        <td>append(A, a); append(B, a)</td>
+                        <td>result_!= result</td>
+
+                    </tr>
+                    <tr class="color_2">
+                        <td class="td">MR1-7</td>
+                        <td>sExtend(A, B); sExtend(B, A)</td>
+                        <td>result_!= result</td>
+
+                    </tr>
+                    <tr class="color_2">
+                        <td class="td">MR1-8</td>
+                        <td>sExtend(A, B); sExtend(A, C)</td>
+                        <td>result_!= result</td>
+
+                    </tr>
+                    <tr class="color_2">
+                        <td class="td">MR1-9</td>
+                        <td>difference(A, B); difference(B, A)</td>
+                        <td>result_!= result</td>
+
+                    </tr>
+                    <tr class="color_2">
+                        <td class="td">MR1-10</td>
+                        <td>difference(A, B); difference(A, C)</td>
+                        <td>result_!= result</td>
+
+                    </tr>
+                    <tr class="color_2">
+                        <td class="td">MR1-11</td>
+                        <td>sReverse(A); sReverse(B)</td>
+                        <td>result_!= result</td>
+
+                    </tr>
+                    <tr class="color_2">
+                        <td class="td">MR1-12</td>
+                        <td>Pop(A, index); Pop(A, index_)</td>
+                        <td>result_!= result</td>
+
+                    </tr>
+                    <tr class="color_2">
+                        <td class="td">MR1-13</td>
+                        <td>remove(A, index) ; remove(A, index_)</td>
+                        <td>result_!= result</td>
+
+                    </tr>
+                    <tr class="color_2">
+                        <td class="td">MR1-14</td>
+                        <td>sPop(A，index); sPop(A, index_)</td>
+                        <td>result_!= result</td>
+
+                    </tr>
+                    <tr class="color_2">
+                        <td class="td">MR1-15</td>
+                        <td>sPopCheap(A, index); sPopCheap(A, index_)</td>
+                        <td>result_!= result</td>
+
+                    </tr>
+                    <tr class="color_2">
+                        <td class="td">MR1-16</td>
+                        <td>hasDuplicate(A); hasDuplicate(B)</td>
+                        <td>result_!= result</td>
+
+                    </tr>
+                    <tr class="color_2">
+                        <td class="td">MR1-17</td>
+                        <td>isEqual(A, B); isEqual(B, A)</td>
+                        <td>result_= result</td>
+
+                    </tr>
+                    <tr class="color_2">
+                        <td class="td">MR1-18</td>
+                        <td>isEqual(A, B); isEqual(A, C)</td>
+                        <td>result_!= result</td>
+
+                    </tr>
+
+                    </tbody>
+                </table>
+
+
+            </dir>
+        </div>
+
+    </div>
+</div>
+</div>
+</body>
+
+
+</html>
+
+<script src="../static/js/jquery-1.11.1.min.js"></script>
+<script src="../static/js/jquery.pagination.js"></script>
+
+<script src="../static/js/jquery.eventFlow.js"></script>
+<script src="../static/js/echarts.js"></script>
+<script src="../static/js/chooseFile.js"></script>
+<script>
+
+    /*tabe侧边栏收缩*/
+    $('.tabs li').click(function () {
+        var i = $(this).index();
+        $(this).addClass('selected').siblings().removeClass('selected');
+        $('.right .item').eq(i).show().siblings().hide();
+    })
+    //点击展开收缩
+    $(".vps-left>b").click(function () {
+        if ($(this).hasClass('out')) {
+            $(".tabs").show();
+            $(this).removeClass("out");
+            $('.vps-right').css({width: '1517px', marginLeft: "20px"});
+            $('.pie').css('width', '266px');
+            $('tr td:nth-child(4)').css('width', '804px');
+//
+        } else {
+            $(".tabs").hide();
+            $(this).addClass("out");
+            $('.vps-right').css({width: '1767px', marginLeft: "60px"});
+            $('.pie').css('width', '326px');
+            $('tr td:nth-child(4)').css('width', '990px');
+
+        }
+    });
+
+    // // 要添加到表格的数据（使用列表格式）
+    // var data = [
+    //     ["Alice", 25],
+    // ];
+    //
+    // // 获取表格的引用
+    // var table = document.getElementById('my-table');
+    // var tbody = table.getElementsByTagName('tbody')[0];
+    //
+    // // 循环遍历数据并将其插入到表格中
+    // for (var i = 0; i < data.length; i++) {
+    //     var row = tbody.insertRow(i);
+    //     var cell1 = row.insertCell(0);
+    //     var cell2 = row.insertCell(1);
+    //     cell1.innerHTML = data[i][0]; // 第一个元素是姓名
+    //     cell2.innerHTML = data[i][1]; // 第二个元素是年龄
+    //
+    //     // 为<tr>和<td>添加样式类
+    //     row.classList.add('color_2');
+    //     cell1.classList.add('td');
+    // }
+
+</script>

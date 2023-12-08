@@ -1,0 +1,5 @@
+{
+  "success": false,
+  "error": "Traceback (most recent call last):\n  File \"D:\\Users\\juanrui\\Anaconda3\\lib\\site-packages\\slither\\__main__.py\", line 744, in main_impl\n    ) = process_all(filename, args, detector_classes, printer_classes)\n  File \"D:\\Users\\juanrui\\Anaconda3\\lib\\site-packages\\slither\\__main__.py\", line 76, in process_all\n    compilations = compile_all(target, **vars(args))\n  File \"D:\\Users\\juanrui\\Anaconda3\\lib\\site-packages\\crytic_compile\\crytic_compile.py\", line 660, in compile_all\n    raise ValueError(f\"Unresolved target: {str(target)}\")\nValueError: Unresolved target: Cryptofin.sol\n",
+  "results": {}
+}

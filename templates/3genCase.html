@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原始测试用例</title>
+    <link rel="stylesheet" href="../static/css/pagination.css">
+    <link rel="stylesheet" href="../static/css/home.css">
+    <link rel="stylesheet" href="../static/css/user-map.css">
+    <link rel="stylesheet" href="../static/css/nuser-vps.css"/>
+    <link rel="stylesheet" href="../static/css/mystyle.css">
+
+</head>
+<body>
+<div class="index">
+    <!--头部-->
+    <div class="head">
+        <b><h3>“智测”-面向智能合约的鲁棒性测试系统</h3></b>
+    </div>
+    <!--主体-->
+    <div class="content">
+        <div class="vps-left left">
+            <ul class="tabs">
+                <a href="index.html"><li>系统总体情况</li> </a>
+                <a href="1funIdentify.html"> <li>合约函数识别</li>   </a>
+                <a href="2getRelation.html"> <li>蜕变关系获取</li>   </a>
+                <a href="3genCase.html"> <li class="selected">原始测试用例</li></a>
+                <a href="3deriveCase.html"> <li>衍生测试用例</li></a>
+<!--                <a href="4runTest.html"> <li>蜕变测试执行</li></a>-->
+                <a href="5anaResult.html"> <li>测试结果分析</li></a>
+            </ul>
+            <b></b>
+        </div>
+
+        <div class="vps-right">
+            <i class="picture_1"></i>
+            <i class="picture_2"></i>
+            <i class="picture_3"></i>
+            <i class="picture_4"></i>
+
+            <div class="gen-testcase">
+<!--                <p class="get-legend">测试用例生成</p><br>-->
+                <div class="radio-div">
+                    <p class="get-legend">选择生成方法</p><br>
+                    <label class="gen-case-label">
+                        <label class="radio-label"><input type="radio" name="gender" value="mannul" class="gen-case-radio">手动输入测试用例</label><br><br>
+                        <textarea id="comments" name="comments" rows="5" cols="50" class="textarea-3"></textarea><br>
+                    </label>
+
+                    <label class="gen-case-label">
+                        <label class="radio-label"><input type="radio" name="gender" value="auto" class="gen-case-radio">自动生成测试用例</label><br>
+                    </label>
+
+                    <label class="gen-case-label">
+                        <label class="radio-label"><input type="radio" name="gender" value="input" class="gen-case-radio">文件导入测试用例</label><br>
+                        <label class="get-label" >选择输入文件:</label><input  type="file" class="get-input"/><br>
+                    </label>
+
+                </div>
+                <div>
+                    <button type="submit" class="get-button">生成原始测试用例</button>
+                </div>
+            </div>
+            <dir class="get-relation">
+<!--                <div><p class="div-head">测试用例</p></div>-->
+                <br>
+                <table id="tab"><!--cellpadding="0" cellspacing="0"-->
+                    <thead>
+                    <tr>
+                        <th class="pointer">函数名称</th>
+                        <th class="pointer">参数类型</th>
+                        <th class="pointer">原始测试用例</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="color_2">
+                    <td> Contains	</td><td>(uint[], A, uint a)	</td><td>（[1,2,3,4,5],5）</td>
+                    </tr>
+                    <tr class="color_2">
+                    <td> append	</td><td>(uint[], A, uint a)	</td><td>（[1,2,3,4,5],5）</td>
+                    </tr>
+                    <tr class="color_2">
+                    <td> sExtend	</td><td>(uint[], A, uint[], B)	</td><td>（[1,2,3,4,5], [3,2,4,4,5]）</td>
+                    </tr>
+                    <tr class="color_2">
+                    <td> difference	</td><td>(uint[], A, uint[], B)	</td><td>（[1,2,3,4,5], [3,2,4,4,5]）</td></tr>
+                    <tr class="color_2">
+                    <td> sReverse	</td><td>(uint[], A)	</td><td>（[1,2,3,4,5],）</td></tr>
+                    <tr class="color_2">
+                    <td> Pop	</td><td>(uint[], A, uint index)	</td><td>（[1,2,3,4,5],1）</td></tr>
+                    <tr class="color_2">
+                    <td> remove	</td><td>(uint[], A, uint index)	</td><td>（[1,2,3,4,5],1）</td></tr>
+                    <tr class="color_2">
+                    <td> sPopCheap	</td><td>(uint[], A, uint index)	</td><td>（[1,2,3,4,5],1）</td></tr>
+                    <tr class="color_2">
+                    <td> hasDuplicate	</td><td>(uint[], A)	</td><td>（[1,2,3,4,5],）</td></tr>
+                    <tr class="color_2">
+                    <td> isEqual	</td><td>(uint[], A, uint[], B)	</td><td>（[1,2,3,4,5], [3,2,4,4,5]）</td></tr>
+                    <tr class="color_2">
+
+                    </tbody>
+                </table>
+            </dir>
+
+        </div>
+
+    </div>
+</div>
+</div>
+</body>
+
+
+</html>
+
+<script src="../static/js/jquery-1.11.1.min.js"></script>
+<script src="../static/js/jquery.pagination.js"></script>
+
+<script src="../static/js/jquery.eventFlow.js"></script>
+<script src="../static/js/echarts.js"></script>
+<script>
+
+    /*tabe侧边栏收缩*/
+    $('.tabs li').click(function () {
+        var i = $(this).index();
+        $(this).addClass('selected').siblings().removeClass('selected');
+        $('.right .item').eq(i).show().siblings().hide();
+    })
+    //点击展开收缩
+    $(".vps-left>b").click(function () {
+        if ($(this).hasClass('out')) {
+            $(".tabs").show();
+            $(this).removeClass("out");
+            $('.vps-right').css({width: '1517px', marginLeft: "20px"});
+            $('.pie').css('width', '266px');
+            $('tr td:nth-child(4)').css('width', '804px');
+//
+        } else {
+            $(".tabs").hide();
+            $(this).addClass("out");
+            $('.vps-right').css({width: '1767px', marginLeft: "60px"});
+            $('.pie').css('width', '326px');
+            $('tr td:nth-child(4)').css('width', '990px');
+
+        }
+    });
+
+</script>

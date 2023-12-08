@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>合约函数识别</title>
+    <link rel="stylesheet" href="../static/css/pagination.css">
+    <link rel="stylesheet" href="../static/css/home.css">
+    <link rel="stylesheet" href="../static/css/user-map.css">
+    <link rel="stylesheet" href="../static/css/nuser-vps.css"/>
+    <link rel="stylesheet" href="../static/css/mystyle.css">
+
+</head>
+<body>
+<div class="index">
+    <!--头部-->
+    <div class="head">
+        <b><h3>“智测”-面向智能合约的鲁棒性测试系统</h3></b>
+    </div>
+    <!--主体-->
+    <div class="content">
+        <div class="vps-left left">
+            <ul class="tabs">
+                <a href="index.html"><li>系统总体情况</li> </a>
+                <a href="1funIdentify.html"> <li class="selected">合约函数识别</li>   </a>
+                <a href="2getRelation.html"> <li >蜕变关系获取</li>   </a>
+                <a href="3genCase.html"> <li>原始测试用例</li></a>
+                <a href="3deriveCase.html"> <li>衍生测试用例</li></a>
+                <!--                <a href="4runTest.html"> <li>蜕变测试执行</li></a>-->
+                <a href="5anaResult.html"> <li>测试结果分析</li></a>
+            </ul>
+            <b></b>
+        </div>
+
+        <div class="vps-right">
+            <i class="picture_1"></i>
+            <i class="picture_2"></i>
+            <i class="picture_3"></i>
+            <i class="picture_4"></i>
+
+            <div class="get-relation">
+                <form>
+                    <fieldset   class="re-field">
+<!--                        <legend class="get-legend">函数识别</legend><br>-->
+                        <label class="get-label">输入待测智能合约程序路径:</label><input  type="file" class="get-input"/><br>
+                        <button class="get-button" type="submit" >函数识别</button>
+                    </fieldset>
+                </form>
+            </div>
+            <br>
+            <dir class="get-relation">
+                <table id="tab">
+                    <thead>
+                    <tr>
+                        <th class="pointer">函数名称</th>
+                        <th class="pointer">参数类型</th>
+                        <th class="pointer">返回值类型</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="color_1">
+                        <td class="td">Contains</td>
+                        <td>(uint[], A, uint a)</td>
+                        <td>bool</td>
+                    </tr>
+                    <tr class="color_2">
+                        <td class="td">append</td>
+                        <td>(uint[], A, uint a)</td>
+                        <td>uint[]</td>
+                    </tr>
+                    <tr class="color_1">
+                        <td class="td">sExtend</td>
+                        <td>(uint[], A, uint[], B)</td>
+                        <td>uint[]</td>
+                    </tr>
+                    <tr class="color_2">
+                        <td class="td">sReverse</td>
+                        <td>(uint[], A)</td>
+                        <td>uint[]</td>
+                    </tr>
+                    <tr class="color_1">
+                        <td class="td">Pop</td>
+                        <td>(uint[], A, uint index)</td>
+                        <td>uint[]</td>
+                    </tr>
+                    <tr class="color_2">
+                        <td class="td">remove</td>
+                        <td>(uint[], A, uint index)</td>
+                        <td>uint[]</td>
+                    </tr>
+                    <tr class="color_1">
+                        <td class="td">sPopCheap</td>
+                        <td>(uint[], A, uint index)</td>
+                        <td>uint[]</td>
+                    </tr>
+                    <tr class="color_2">
+                        <td class="td">hasDuplicate</td>
+                        <td>(uint[], A)</td>
+                        <td>bool</td>
+                    </tr>
+                    <tr class="color_1">
+                        <td class="td">isEqual</td>
+                        <td>(uint[], A, uint[], B)</td>
+                        <td>bool</td>
+
+                    </tbody>
+                </table>
+
+<!--                <div id="pagination">-->
+<!--                    <button onclick="previousPage()">上一页</button>-->
+<!--                    <button onclick="nextPage()">下一页</button>-->
+<!--                </div>-->
+
+                <!--<div class="vps-buttom color_1 ">-->
+                <!--<div class="vps-c">-->
+                <!--<span class="font_c">上一页</span>-->
+
+                <!--<span class="number">1</span>-->
+
+                <!--<span class="number">2</span>-->
+                <!--<span class="number_color">3</span>-->
+
+
+                <!--<span class="font_color">下一页</span>-->
+                <!--</div>-->
+                <!--</div>-->
+                <div class="vps-buttom color_1 ">
+                    <div  id="Pagination" class="pagination_vps color_1"></div>
+                </div>
+            </dir>
+        </div>
+
+    </div>
+</div>
+</div>
+</body>
+
+
+</html>
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery.pagination.js"></script>
+
+<script src="js/jquery.eventFlow.js"></script>
+<script src="js/echarts.js"></script>
+<script src="js/chooseFile.js"></script>
+<script>
+
+    /*tabe侧边栏收缩*/
+    $('.tabs li').click(function () {
+        var i = $(this).index();
+        $(this).addClass('selected').siblings().removeClass('selected');
+        $('.right .item').eq(i).show().siblings().hide();
+    })
+    //点击展开收缩
+    $(".vps-left>b").click(function () {
+        if ($(this).hasClass('out')) {
+            $(".tabs").show();
+            $(this).removeClass("out");
+            $('.vps-right').css({width: '1517px', marginLeft: "20px"});
+            $('.pie').css('width', '266px');
+            $('tr td:nth-child(4)').css('width', '804px');
+//
+        } else {
+            $(".tabs").hide();
+            $(this).addClass("out");
+            $('.vps-right').css({width: '1767px', marginLeft: "60px"});
+            $('.pie').css('width', '326px');
+            $('tr td:nth-child(4)').css('width', '990px');
+
+        }
+    });
+
+
+    var currentPage = 1;
+    var rowsPerPage = 10; // 每页显示的行数
+    var table = document.getElementById('tab');
+    var rows = table.rows;
+
+    function showPage(page) {
+        for (var i = 0; i < rows.length; i++) {
+            if (i < (page - 1) * rowsPerPage || i >= page * rowsPerPage) {
+                rows[i].style.display = 'none';
+            } else {
+                rows[i].style.display = '';
+            }
+        }
+    }
+
+    function previousPage() {
+        if (currentPage > 1) {
+            currentPage--;
+            showPage(currentPage);
+        }
+    }
+
+    function nextPage() {
+        if (currentPage < Math.ceil(rows.length / rowsPerPage)) {
+            currentPage++;
+            showPage(currentPage);
+        }
+    }
+
+    showPage(currentPage);
+
+    /*分页*/
+    var pageSize = 4;     //每页显示多少条记录
+    var total;           //总共多少记录
+    $(function () {
+        Init(0); //注意参数，初始页面默认传到后台的参数，第一页是0;
+        $("#Pagination").pagination(total, {   //total不能少
+            callback: PageCallback,
+            prev_text: '上一页',
+            next_text: '下一页',
+            items_per_page: pageSize,
+            num_display_entries: 4,        //连续分页主体部分显示的分页条目数
+            num_edge_entries: 1,           //两侧显示的首尾分页的条目数
+        });
+        function PageCallback(index, jq) {     //前一个表示您当前点击的那个分页的页数索引值，后一个参数表示装载容器。
+            Init(index);
+        }
+    });
+
+    function Init(pageIndex) {      //这个参数就是点击的那个分页的页数索引值，第一页为0，上面提到了，下面这部分就是AJAX传值了。
+
+    }
+    ;
+
+</script>
